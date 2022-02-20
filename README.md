@@ -24,12 +24,16 @@ ETL was performed on the Amazon Review Dataset and data was imported successfull
 
 1. Load Data into Spark dataframe
 
+![Load Data](https://github.com/srfassihi/Amazon_Vine_Analysis/blob/bd9ccbe27f5ce97967b8e2aa37f2d332b5160f71/resources/Screen%20Shot%202022-02-20%20at%205.31.31%20PM.png)
 2. Drop null rows from dataframe
 
+![Drop Nulls](https://github.com/srfassihi/Amazon_Vine_Analysis/blob/bd9ccbe27f5ce97967b8e2aa37f2d332b5160f71/resources/Screen%20Shot%202022-02-20%20at%205.31.47%20PM.png)
 3. Create Dataframes to match target tables
 
+![Create DataFrames-Products](https://github.com/srfassihi/Amazon_Vine_Analysis/blob/bd9ccbe27f5ce97967b8e2aa37f2d332b5160f71/resources/Screen%20Shot%202022-02-20%20at%205.32.09%20PM.png)
 4. Connect to AWS using PostGRes Driver and write dataframe results to PostGRes tables
 
+![Connect and Write Results](https://github.com/srfassihi/Amazon_Vine_Analysis/blob/bd9ccbe27f5ce97967b8e2aa37f2d332b5160f71/resources/Screen%20Shot%202022-02-20%20at%205.32.39%20PM.png)
 
 ### Deliverable 2: Determine Bias of Vine Reviews
 Vine and Non Vine Reviews were analyzed on the Amazon Review Dataset in both the created SQL 'Vine_Table' and in a Colab Notebook. Using the 'cleaned' dataframe from the previous deliverable the following steps were followed:
@@ -41,6 +45,7 @@ Vine and Non Vine Reviews were analyzed on the Amazon Review Dataset in both the
 
 **Analysis Results**
 
+![Analysis DataFrame](https://github.com/srfassihi/Amazon_Vine_Analysis/blob/bd9ccbe27f5ce97967b8e2aa37f2d332b5160f71/resources/Screen%20Shot%202022-02-20%20at%205.41.55%20PM.png)
  
 
 ## Summary
