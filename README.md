@@ -46,6 +46,43 @@ Vine and Non Vine Reviews were analyzed on the Amazon Review Dataset in both the
 **Analysis Results**
 
 ![Analysis DataFrame](https://github.com/srfassihi/Amazon_Vine_Analysis/blob/bd9ccbe27f5ce97967b8e2aa37f2d332b5160f71/resources/Screen%20Shot%202022-02-20%20at%205.41.55%20PM.png)
- 
+
+SQL:
+
+SELECT VINE,
+			COUNT(*) AS CNT_TOTAL
+		FROM VINE_TABLE
+		WHERE CAST(HELPFUL_VOTES AS FLOAT) / CAST(TOTAL_VOTES AS FLOAT) >= 0.5
+			AND TOTAL_VOTES >= 20
+		GROUP BY VINE
+
+| VINE | COUNT |
+|:---|:---|
+| N | 40471|
+| Y | 94 | 
+
+SELECT VINE,
+			COUNT(*) AS CNT_FIVE_STAR
+		FROM VINE_TABLE
+		WHERE CAST(HELPFUL_VOTES AS FLOAT) / CAST(TOTAL_VOTES AS FLOAT) >= 0.5
+			AND TOTAL_VOTES >= 20
+			AND STAR_RATING = 5
+		GROUP BY VINE
+
+| VINE | FIVE_STAR_COUNT |
+|:---|:---|
+| N | 15663|
+| Y | 48 | 
 
 ## Summary
+
+- Reviews produced by the Vine showed a slightly higher tendancy to positive reviews than non-paid reviews indicating a bias towards giving higher ratings.
+ - For the filtered sample, there was a 51% of 5-Star reviews given by Vine versus a 39% of 5-Star reviews by others
+  - 48 / 94 ratings by Vine were 5-Stars
+  - 15.6k / 40.4k ratings by others were 5-Stars
+- Total sample of Vine Reviews were much smaller than the population (Less than 0.2%), but out of this sample there was a stronger inclination to give higher ratings. 
+
+### Recommendations
+- Further analysis can be done using other datasets to indicate which products have stronger bias than others. 
+- Specific Reviews can be audited by a third party (i.e. other consumers) to see if they are trustworthy.
+- 'Post mortem' or '6-month later' review process can be done to further evaluate products AFTER the initial impression is done to get a more concrete analysis of the product.
